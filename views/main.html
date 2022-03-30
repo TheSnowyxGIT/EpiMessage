@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Epimessage</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="libraries/fuzzysort.js"></script>
+
+    <link rel="stylesheet" href="libraries/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+
+
+<body>
+
+
+    <div class="container-msg">
+        <div class="msg-left">
+            
+            <div class="msg_left_searchdiv">
+                <input type="search" class="form-control rounded" placeholder="Recherche" aria-label="Recherche" aria-describedby="search-addon" id="search-bar" />
+            </div>
+
+            <div class="msg_left_select">
+                <div class="select_button active" id="private_button">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="select_button" id="group_button">
+                    <i class="fas fa-users"></i>
+                </div>
+            </div>
+
+
+            <div class="user_box" id="user_box_origin" style="display: none;">
+                <div class="user_box_left">
+                    <img src="https://photos.cri.epita.fr/thumb/" class="profile_picture">
+                </div>
+                <div class="user_box_middle">
+                    <h4 class="last_message_name">Prenom Nom</h4>
+                    <p  class="last_message_body">messddddddddddddddddddddage</p>
+                    <p class="last_message_date">date</p>
+                </div>
+                <div class="user_box_right">
+                    <i class="fas fa-circle"></i>
+                </div>
+                <div class="user_box_state">
+                    <i class="fas fa-circle"></i>
+                </div>
+            </div>
+
+            <div class="group_box" id="group_box_origin" style="display: none;">
+                <div class="group_box_left">
+                    <img src="" class="group_picture">
+                </div>
+                <div class="group_box_middle">
+                    <h4 class="last_message_title">Group name</h4>
+                    <div class="last_message_container">
+                        <p  class="last_message_name">Nom Prenom</p>
+                        <p  class="last_message_body">message</p>
+                    </div>
+                    <p class="last_message_date">date</p>
+                </div>
+                <div class="group_box_right">
+                    <i class="fas fa-circle"></i>
+                </div>
+            </div>
+
+
+            <div class="msg_channel_list">
+            </div>
+        </div>
+        <div class="msg-right">
+
+            <div class="msg_right_header">
+                <div class="header_user_state">
+                    <i class="fas fa-circle"></i>
+                </div>
+                <img src="">
+                <h2 class="msg_right_header_title"></h2>
+            </div>
+
+            <div class="msg_right_container">
+                <div class="msg_line" id="msg_line_origin" style="display: none;">
+                    <img class="msg_line_img" src="">
+                    <div class="msg_line_type">
+                        <div class="msg_line_date"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="msg_right_footer">
+
+                <div class="alert_box" style="display: none;">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <div class="alert_msg"></div>
+                </div> 
+
+
+                <div id="emoji_picker" style="display: none;">
+                    <div class="emoji_picker_title">
+                        <div>EMOJI(S) CORRESPONDANT À:</div>
+                        <div>fr</div>
+                    </div>
+                    <div class="emoji_picker_list">
+                    </div>
+                </div>
+
+                <div class="msg_right_footer_upper">
+                    <div id="upload_progress" style="width: Opx;"></div>
+                    <div id="files_list" class="hide"></div>
+                </div>
+                <div class="msg_right_footer_lower">
+                    <input type="search" class="form-control rounded" placeholder="Aa" aria-label="Aa" aria-describedby="search-addon" id="message-bar" />
+                    <div class="msg_right_footer_button" id="file_button">
+                        <i class="far fa-folder"></i>
+                    </div>
+                    <div class="msg_right_footer_button" id="send_button">
+                        <i class="far fa-paper-plane"></i>
+                    </div>
+                    <input type="file" id="file_file_chooser" name="file_file_chooser" accept="" style="display: none;" multiple>
+                </div>
+
+                
+                
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/siofu/client.js"></script>
+    <script src="/js/emoji.js"></script>
+    <script src="/js/epimessage.js"></script>
+
+</body>
+
+</html>

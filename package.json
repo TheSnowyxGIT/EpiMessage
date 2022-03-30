@@ -1,0 +1,25 @@
+{
+  "name": "epimessages",
+  "version": "1.0.0",
+  "description": "hat is the very cool Messenging Application made by Adrien Pingard and Thomas Peugnet",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie": "^0.4.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mmmagic": "^0.5.3",
+    "mysql2": "^2.2.5",
+    "node-emoji": "^1.10.0",
+    "php-unserialize": "0.0.1",
+    "socket.io": "^4.0.1",
+    "socketio-file-upload": "^0.7.3",
+    "twig": "^1.15.4"
+  }
+}
