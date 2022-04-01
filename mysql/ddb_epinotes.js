@@ -1,9 +1,9 @@
 const mysql = require('mysql2');
 
-const serverip = "localhost";
-const username = "admin_notes";
-const password = "#1536CSlBg[6";
-const database = "epinotes";
+const serverip = process.env.DDB_HOST;
+const username = process.env.DDB_USER;
+const password = process.env.DDB_PASSWORD;
+const database = process.env.DDB_NAME;
 
 
 const connection = mysql.createConnection({
