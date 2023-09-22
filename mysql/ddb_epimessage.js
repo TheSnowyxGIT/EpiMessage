@@ -1,17 +1,21 @@
-const mysql = require('mysql2');
+const { Pool, Client } = require("pg");
+const fs = require("fs");
 
-const serverip = "localhost";
-const username = "admin_notes";
-const password = "#1536CSlBg[6";
-const database = "epimessages";
+const host = process.env.DDB_HOST;
+const username = process.env.DDB_USER;
+const password = process.env.DDB_PASSWORD;
+const database = process.env.DDB_NAME;
 
+const pool = new Pool({
+  user: username,
+  host: host,
+  database: database,
+  password: password,
+  port: 5432,
+  ssl: {
+    rejectUnauthorized: false,
+    ca: [fs.readFileSync("eu-west-3-bundle.pem").toString()],
+  },
+});
 
-const connection = mysql.createConnection({
-   host: serverip,
-   user: username,
-   password: password,
-   database: database
- });
-
-
-module.exports = connection;
+module.exports = pool;

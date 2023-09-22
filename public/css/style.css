@@ -265,10 +265,27 @@
 .msg_line_received .msg_line_img{
     margin-top: 1px;
     margin-right : 10px;
-    width: 35px;
+    width: 50px;
     height : 50px;
     border-radius : 20%;
 }
+
+.msg_line_received .img_div {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+}
+
+.msg_line_received .img_div span {
+    display: block;
+    color: white;
+}
+
+.msg_line_sended .img_div span {
+    display: none;
+}
+
 .msg_line_sended{
     direction : rtl;
     width: 100%;
@@ -280,7 +297,7 @@
 .msg_line_sended .msg_line_img{
     margin-top: 2px;
     margin-left : 10px;
-    width: 35px;
+    width: 50px;
     height : 50px;
     border-radius : 20%;
 }
